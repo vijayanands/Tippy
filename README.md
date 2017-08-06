@@ -41,7 +41,7 @@ As part of your pre-work submission, please reflect on the app and answer the fo
 
 Question 2: "Swift uses [Automatic Reference Counting](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID49) (ARC), which is not a garbage collector, to manage memory. Can you explain how you can get a strong reference cycle for closures? (There's a section explaining this concept in the link, how would you summarize as simply as possible?)"
 
-**Answer:** [We can create a strong reference cycle by creating a cyclic dependencies between an object of class1 and an object of class2. In other words object of class1 has a property or a strong variable instance of class2 and object of class2 has a property or a strong variable instance of class1. So when one of the objects is destroyed there is still a reference to that from the other object].
+**Answer:** We can create a strong reference cycle by creating a cyclic dependencies between an object of class1 and an object of class2. In other words object of class1 has a property or a strong variable instance of class2 and object of class2 has a property or a strong variable instance of class1. So when one of the objects is destroyed there is still a reference to that from the other object.
 
 
 ## License
