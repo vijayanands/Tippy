@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipPicker: UIPickerView!
+    @IBOutlet weak var tipStringLabel: UILabel!
     
     var tipPickerFields = ["Bad Service", "Good Service", "Excellent Service",  "No Tip"]
     var tipPercentages = [10, 10, 10, 0]
@@ -26,15 +27,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.tipPicker.dataSource = self
         self.tipPicker.backgroundColor = UIColor .cyan
         self.tipPicker.selectRow(1, inComponent: 0, animated: false)
+        self.billField.becomeFirstResponder()
         loadTipDefaults()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.billField.becomeFirstResponder()
         loadTipDefaults()
         setFields()
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -64,7 +66,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         label.textColor = .black
         label.textAlignment = .center
-        label.font = UIFont(name: "SanFranciscoText-Light", size: 15)
+        label.font = UIFont(name: "System", size: 21)
         
         // where data is an Array of String
         label.text = tipPickerFields[row]
@@ -113,6 +115,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let tip = bill * Double(tipPercentage)/100
         let total = bill + tip
         
+        tipStringLabel.text = String("Tip (\(tipPercentage)%)")
         tipLabel.text = String(format: "%.2f", tip)
         totalLabel.text = String(format: "%.2f", total)
     }

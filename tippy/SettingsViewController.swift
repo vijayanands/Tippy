@@ -22,6 +22,16 @@ class SettingsViewController: UIViewController {
         excellentTextValue.text = defaults.object(forKey: "excellentTextValue") as? String
         normalTextValue.text = defaults.object(forKey: "normalTextValue") as? String
         averageTextValue.text = defaults.object(forKey: "averageTextValue") as? String
+        self.excellentTextValue.becomeFirstResponder()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let defaults = UserDefaults.standard
+        excellentTextValue.text = defaults.object(forKey: "excellentTextValue") as? String
+        normalTextValue.text = defaults.object(forKey: "normalTextValue") as? String
+        averageTextValue.text = defaults.object(forKey: "averageTextValue") as? String
+        self.excellentTextValue.becomeFirstResponder()
     }
 
     @IBAction func saveTipSettings(_ sender: Any) {
