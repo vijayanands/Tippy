@@ -76,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF5985ED1F4148150089A5B3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			path = ..;
+			sourceTree = "<group>";
+		};
 		AF884C5F1F32D8D100843CAA = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				AF884C6B1F32D8D100843CAA /* AppDelegate.swift */,
+				AF5985ED1F4148150089A5B3 /* Supporting Files */,
 				AF884C6D1F32D8D100843CAA /* ViewController.swift */,
 				AF884C6F1F32D8D100843CAA /* Main.storyboard */,
 				AF884C991F3426A500843CAA /* SettingsViewController.swift */,

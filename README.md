@@ -21,7 +21,11 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [x] Used a PickerView instead of a Segmented Control to specify the tip percentage
+- [x] Added slider for tip selection
+- [x] Added buttons for tip selection
+- [x] Ability to toggle between slider and button in settings
+- [x] Added Tax calculation by setting a tax percent
+- [x] Added Ability to include/exclude tax in tip 
 
 ## Video Walkthrough 
 
