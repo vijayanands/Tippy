@@ -4,7 +4,7 @@
 
 Submitted by: **Vijayanand Sankarasubramanian**
 
-Time spent: **24** hours spent in total
+Time spent: **24.5** hours spent in total
 
 ## User Stories
 
