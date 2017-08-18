@@ -87,7 +87,21 @@ class ViewController: UIViewController {
         let defaultBadServiceTip = "15"
         let defaultGoodServiceTip = "18"
         let defaultExcellentServiceTip = "22"
-        let locale = Locale.current
+        var locale = Locale.current
+        let defaults = UserDefaults.standard
+        
+        if let usLocale = defaults.object(forKey: "usLocaleSet") {
+            let usLocaleSet = usLocale as? Bool
+            if (usLocaleSet == true) {
+                locale = NSLocale(localeIdentifier: "en_US") as Locale
+            }
+        }
+        if let ukLocale = defaults.object(forKey: "ukLocaleSet") {
+            let ukLocaleSet = ukLocale as? Bool
+            if (ukLocaleSet == true) {
+                locale = NSLocale(localeIdentifier: "en_UK") as Locale
+            }
+        }
         currencySymbol = locale.currencySymbol!
         
         billCurrency.text = currencySymbol
@@ -95,7 +109,6 @@ class ViewController: UIViewController {
         tipCurrency.text = currencySymbol
         totalCurrency.text = currencySymbol
         
-        let defaults = UserDefaults.standard
         // determine use of slider/buttons for tip
         if let useSlider = defaults.object(forKey: "tipSelectionStyleSlider") {
             tipSelectionStyleSlider = useSlider as! Bool

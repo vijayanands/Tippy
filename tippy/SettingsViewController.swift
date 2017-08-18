@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var averageTextValue: UITextField!
     @IBOutlet weak var normalTextValue: UITextField!
@@ -19,17 +19,31 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var excludeTaxSwitch: UISwitch!
     @IBOutlet weak var tipSliderMinValue: UITextField!
     @IBOutlet weak var tipSliderMaxValue: UITextField!
+
+    @IBOutlet weak var localePicker: UIPickerView!
+    let localeData = ["Default", "US", "UK"]
+    var localeString = "Default"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.localePicker.delegate = self
+        self.localePicker.dataSource = self
+        loadLocalePickerSelected()
         loadDefaults()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.localePicker.delegate = self
+        self.localePicker.dataSource = self
         loadDefaults()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func loadDefaults() {
@@ -76,8 +90,56 @@ class SettingsViewController: UIViewController {
         if let minimumTip = defaults.object(forKey: "tipSliderMinValue") {
             tipSliderMinValue.text = minimumTip as? String
         } else {
-            tipSliderMinValue.text = "30"
+            tipSliderMinValue.text = "0"
         }
+    }
+    
+    func loadLocalePickerSelected() {
+        let defaults = UserDefaults.standard
+        if let locale = defaults.object(forKey: "localeString") as? String {
+            if locale .isEqual("UK") {
+                localePicker.selectRow(2, inComponent: 0, animated: false)
+            } else {
+                if locale .isEqual("US") {
+                    localePicker.selectRow(1, inComponent: 0, animated: false)
+                } else {
+                    localePicker.selectRow(0, inComponent: 0, animated: false)
+                }
+            }
+        }
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return localeData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        self.localeString = localeData[row]
+        setLocale()
+        return localeData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.localeString = localeData[row]
+        setLocale()
+    }
+    
+    func setLocale() {
+        let defaults = UserDefaults.standard
+        if self.localeString .isEqual("US") || self.localeString .isEqual("Default") {
+            defaults.set(true, forKey: "usLocaleSet")
+            defaults.set(false, forKey: "ukLocaleSet")
+        }
+        if self.localeString .isEqual("UK") {
+            defaults.set(true, forKey: "ukLocaleSet");
+            defaults.set(false, forKey: "usLocaleSet");
+        }
+        defaults.set(self.localeString, forKey: "localeString")
+        defaults.synchronize()
     }
     
     @IBAction func saveSettings(_ sender: Any) {
@@ -89,11 +151,6 @@ class SettingsViewController: UIViewController {
         defaults.set(tipSliderMinValue.text, forKey: "tipSliderMinValue")
         defaults.set(tipSliderMaxValue.text, forKey: "tipSliderMaxValue")
         defaults.synchronize()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func onTap(_ sender: Any) {
