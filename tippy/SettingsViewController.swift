@@ -68,6 +68,16 @@ class SettingsViewController: UIViewController {
         } else {
             excludeTaxSwitch.isOn = true
         }
+        if let maximumTip = defaults.object(forKey: "tipSliderMaxValue") {
+            tipSliderMaxValue.text = maximumTip as? String
+        } else {
+            tipSliderMaxValue.text = "30"
+        }
+        if let minimumTip = defaults.object(forKey: "tipSliderMinValue") {
+            tipSliderMinValue.text = minimumTip as? String
+        } else {
+            tipSliderMinValue.text = "30"
+        }
     }
     
     @IBAction func saveSettings(_ sender: Any) {

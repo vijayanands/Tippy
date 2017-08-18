@@ -8,6 +8,22 @@
 
 import UIKit
 
+extension Formatter {
+    static let withSeparator: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = ","
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
+}
+
+extension Double {
+    var formattedWithSeparator: String {
+        return Formatter.withSeparator.string(for: self) ?? ""
+    }
+}
+
 class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
 
@@ -23,12 +39,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tipSliderMinValue: UILabel!
     @IBOutlet weak var tipSliderMaxValue: UILabel!
+    @IBOutlet weak var billCurrency: UILabel!
+    @IBOutlet weak var taxCurrency: UILabel!
+    @IBOutlet weak var tipCurrency: UILabel!
+    @IBOutlet weak var totalCurrency: UILabel!
     
     var tipPercentages = [10, 10, 10]
-    var tipSelected : Int = 1
     var tipSelectionStyleSlider = false
     var taxPercent = 8.25
     var excludeTax = true
+    var currencySymbol = "$"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +87,14 @@ class ViewController: UIViewController {
         let defaultBadServiceTip = "15"
         let defaultGoodServiceTip = "18"
         let defaultExcellentServiceTip = "22"
+        let locale = Locale.current
+        currencySymbol = locale.currencySymbol!
+        
+        billCurrency.text = currencySymbol
+        taxCurrency.text = currencySymbol
+        tipCurrency.text = currencySymbol
+        totalCurrency.text = currencySymbol
+        
         let defaults = UserDefaults.standard
         // determine use of slider/buttons for tip
         if let useSlider = defaults.object(forKey: "tipSelectionStyleSlider") {
@@ -175,9 +203,13 @@ class ViewController: UIViewController {
         let total = bill + tax + tip
         
         tipStringLabel.text = String("Tip (\(tipPercentage)%)")
-        tipLabel.text = String(format: "%.2f", tip)
-        taxLabel.text = String(format: "%.2f", tax)
-        totalLabel.text = String(format: "%.2f", total)
+//        tipLabel.text = String(format: "%.2f", tip)
+//        taxLabel.text = String(format: "%.2f", tax)
+//        totalLabel.text = String(format: "%.2f", total)
+        tipLabel.text = tip.formattedWithSeparator
+        taxLabel.text = tax.formattedWithSeparator
+        totalLabel.text = total.formattedWithSeparator
+        
     }
 }
 

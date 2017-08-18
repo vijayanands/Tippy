@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" id="X2a-V2-aKt">
-                                <rect key="frame" x="257" y="105" width="97" height="30"/>
+                                <rect key="frame" x="286" y="105" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.79704005281690138" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
@@ -37,7 +37,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bgj-vg-Hkb">
-                                <rect key="frame" x="257" y="257" width="97" height="28"/>
+                                <rect key="frame" x="286" y="257" width="68" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.799653389084507" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -61,7 +61,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gCp-hD-JTB">
-                                <rect key="frame" x="257" y="184" width="97" height="31"/>
+                                <rect key="frame" x="286" y="184" width="68" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.80108384683098588" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -69,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cRU-L3-Kg0">
-                                <rect key="frame" x="257" y="408" width="97" height="33"/>
+                                <rect key="frame" x="220" y="408" width="134" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -120,6 +120,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pqr-9T-f2c">
+                                <rect key="frame" x="263" y="109" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZHT-QE-15d">
+                                <rect key="frame" x="263" y="189" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ymc-py-nPU">
+                                <rect key="frame" x="263" y="261" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jyw-1g-kww">
+                                <rect key="frame" x="201" y="412" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.12232980307433156" green="0.38207025340308326" blue="0.57919406890869141" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -135,8 +163,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="billCurrency" destination="pqr-9T-f2c" id="Oaa-lC-heH"/>
                         <outlet property="billField" destination="X2a-V2-aKt" id="2dj-BR-6o8"/>
+                        <outlet property="taxCurrency" destination="ZHT-QE-15d" id="p4c-ej-1zx"/>
                         <outlet property="taxLabel" destination="gCp-hD-JTB" id="iwv-Kt-YtJ"/>
+                        <outlet property="tipCurrency" destination="ymc-py-nPU" id="SzJ-He-9W3"/>
                         <outlet property="tipLabel" destination="Bgj-vg-Hkb" id="lBv-FU-GnV"/>
                         <outlet property="tipSelectionButtons" destination="swe-j9-p5j" id="bek-9H-7Xj"/>
                         <outlet property="tipSelectionSegment" destination="swe-j9-p5j" id="f8s-WN-32V"/>
@@ -145,6 +176,7 @@
                         <outlet property="tipSliderMaxValue" destination="ReH-As-k7J" id="22n-fQ-3Es"/>
                         <outlet property="tipSliderMinValue" destination="Vr4-Dc-AHb" id="BBJ-kN-Joq"/>
                         <outlet property="tipStringLabel" destination="DCT-VC-Euq" id="1Va-Zc-OgU"/>
+                        <outlet property="totalCurrency" destination="jyw-1g-kww" id="awe-0p-Gso"/>
                         <outlet property="totalLabel" destination="cRU-L3-Kg0" id="BSJ-O7-HNf"/>
                     </connections>
                 </viewController>
